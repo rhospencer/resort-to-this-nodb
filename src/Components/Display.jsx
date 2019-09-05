@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import '../App.css'
 import axios from 'axios'
 import Resorts from './Resorts'
+import AddForm from './AddForm'
 
 
 export default class Display extends Component {
@@ -32,6 +33,7 @@ export default class Display extends Component {
         return(
             <div className="display">
                 {list}
+                <AddForm />
             </div>
         )
     }

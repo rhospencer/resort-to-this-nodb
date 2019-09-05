@@ -45,3 +45,13 @@ header {
   flex-direction: row;
   justify-content: space-between;
 }
+.button-holder {
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+}
+.edit-holder {
+  height: 30vh;
+  width: 80vw;
+  background: #424249;
+}

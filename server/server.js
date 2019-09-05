@@ -11,6 +11,8 @@ app.use(express.json())
 
 app.get('/api/resorts', resortCtrl.getResorts)
 
+app.post('/api/resorts', resortCtrl.createResort)
+
 
 
 
