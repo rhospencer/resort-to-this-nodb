@@ -38,6 +38,10 @@ module.exports = {
             res.status(404).send('ID not found.')
         }
         resorts.splice(index, 1)
-        res.status(200).send(results)
+        res.status(200).send(resorts)
+    },
+
+    editResort: (req, res, next) => {
+        
     }
 }

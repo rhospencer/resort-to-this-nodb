@@ -6,7 +6,12 @@ export default class App extends Component {
         super(props)
 
         this.state = {
-            input: ''
+            // Inputs for update functionality
+            openingDateUpdate: '',
+            liftsOpenUpdate: '',
+            trailsOpenUpdate: '',
+            parksOpenUpdate: '',
+            zipUpdate: ''
         }
     }
 
@@ -36,7 +41,7 @@ export default class App extends Component {
                 </div>
                 <div className="edit-holder">
                     <button>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => this.props.handleDelete(this.props.id)}>Delete</button>
                 </div>
             </div>
         )

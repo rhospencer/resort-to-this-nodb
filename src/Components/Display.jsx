@@ -13,6 +13,7 @@ export default class Display extends Component {
             resorts: []
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
@@ -30,21 +31,27 @@ export default class Display extends Component {
         })
     }
 
-    // handleDelete(id) {
-    //     axios.dele
-    // }
+    handleDelete(id) {
+        axios.delete(`/api/resorts/${id}`).then(res => {
+            this.setState({resorts: res.data})
+        })
+    }
 
     render() {
         let list = this.state.resorts.map(el => {
             return <Resorts
                         key={el.id}
                         data={el}
+                        id={el.id}
+                        handleDelete={this.handleDelete}
                     />
         })
         return(
             <div className="display">
                 {list}
-                <AddForm handleSubmit={this.handleSubmit}/>
+                <AddForm 
+                    handleSubmit={this.handleSubmit} 
+                />
             </div>
         )
     }
