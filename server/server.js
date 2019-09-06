@@ -13,6 +13,8 @@ app.get('/api/resorts', resortCtrl.getResorts)
 
 app.post('/api/resorts', resortCtrl.createResort)
 
+app.delete('/api/resorts/:id', resortCtrl.deleteResort)
+
 
 
 

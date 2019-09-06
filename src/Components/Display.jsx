@@ -12,16 +12,27 @@ export default class Display extends Component {
         this.state = {
             resorts: []
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
-        axios.get('/api/resorts').then(res =>{
+        axios.get('/api/resorts').then(res => {
             this.setState({resorts: res.data})
         }).catch(err => {
             // Do something more
             console.log(err)
         })
     }
+
+    handleSubmit(body) {
+        axios.post('/api/resorts', body).then(res => {
+            this.setState({resorts: res.data})
+        })
+    }
+
+    // handleDelete(id) {
+    //     axios.dele
+    // }
 
     render() {
         let list = this.state.resorts.map(el => {
@@ -33,7 +44,7 @@ export default class Display extends Component {
         return(
             <div className="display">
                 {list}
-                <AddForm />
+                <AddForm handleSubmit={this.handleSubmit}/>
             </div>
         )
     }

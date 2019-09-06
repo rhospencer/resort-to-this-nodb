@@ -29,5 +29,15 @@ module.exports = {
 
     getResorts: (req, res, next) => {
         res.status(200).send(resorts)
+    },
+
+    deleteResort: (req, res, next) => {
+        const {id} = req.params
+        const index = resorts.findIndex(el => +el.id === +id)
+        if (index === -1) {
+            res.status(404).send('ID not found.')
+        }
+        resorts.splice(index, 1)
+        res.status(200).send(results)
     }
 }

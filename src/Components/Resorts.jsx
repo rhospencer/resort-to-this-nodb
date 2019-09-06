@@ -12,26 +12,31 @@ export default class App extends Component {
 
     render() {
         return(
-            <div className="resorts">
-                <div className="title-holder">
-                    <h1>{this.props.data.name}</h1>
-                    <h4>
-                        {this.props.data.city}, 
-                        {this.props.data.state}, 
-                        {this.props.data.country}
-                    </h4>
-                </div>
-                <div className="weather-holder">
-                    Weather Holder 
-                </div>
-                <div className="resort-info-holder">
-                    <div className="resort-info">
-                        <h4>Opening Date: {this.props.data.openingDate}</h4>
-                        <h4>Lifts Open: {this.props.data.liftsOpen}/{this.props.data.totalLifts}</h4>
-                        <h4>Trails Open: {this.props.data.trailsOpen}/{this.props.data.totalTrails}</h4>
-                        <h4>Parks Open: {this.props.data.parksOpen}/{this.props.data.totalParks}</h4>
-
+            <div className="resort-holder">
+                <div className="resort">
+                    <div className="title-holder">
+                        <h1>{this.props.data.name}</h1>
+                        <h4>
+                            {this.props.data.city}, 
+                            {this.props.data.state}, 
+                            {this.props.data.country}
+                        </h4>
                     </div>
+                    <div className="weather-holder">
+                        Weather Holder 
+                    </div>
+                    <div className="resort-info-holder">
+                        <div className="resort-info">
+                            <h4>Opening Date: {this.props.data.openingDate}</h4>
+                            <h4>Lifts Open: {this.props.data.liftsOpen}/{this.props.data.totalLifts}</h4>
+                            <h4>Trails Open: {this.props.data.trailsOpen}/{this.props.data.totalTrails}</h4>
+                            <h4>Parks Open: {this.props.data.parksOpen}/{this.props.data.totalParks}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div className="edit-holder">
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </div>
             </div>
         )
