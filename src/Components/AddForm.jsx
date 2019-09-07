@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import '../App.css'
+import addImg from '../assets/plus.png'
 
 export default class App extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            edit: false,
+            add: false,
             nameInput: '',
             cityInput: '',
             stateInput: '',
@@ -22,8 +23,8 @@ export default class App extends Component {
         }
     }
 
-    toggleEdit = () => {
-        this.setState({edit: !this.state.edit})
+    toggleAdd = () => {
+        this.setState({add: !this.state.add})
     }
 
     handleChange = (e) => {
@@ -46,16 +47,17 @@ export default class App extends Component {
             totalParks: this.state.totalParksInput
         }
         this.props.handleSubmit(newResort)
+        this.toggleAdd()
     }
 
     render() {
         return(
-            <div>
-                <div className="button-holder">
-                    <button onClick={this.toggleEdit} className="add">+</button>              
-                </div>
                 <div>
-                    {!this.state.edit ? <></> : 
+                    {!this.state.add ? 
+                        <div className="button-holder">
+                            <img src={addImg} onClick={this.toggleAdd} alt=""/>              
+                        </div> 
+                        : 
                         <div className="add-holder">
                             <input name="nameInput" onChange={(e) => this.handleChange(e)} placeholder="Resort Name" type="text"/>
                             <input name="cityInput" onChange={(e) => this.handleChange(e)} placeholder="City"type="text"/>
@@ -68,13 +70,12 @@ export default class App extends Component {
                             <input name="trailsOpenInput" onChange={(e) => this.handleChange(e)} placeholder="Trails Open" type="text"/>
                             <input name="totalTrailsInput" onChange={(e) => this.handleChange(e)} placeholder="Total Trails" type="text"/>
                             <input name="parksOpenInput" onChange={(e) => this.handleChange(e)} placeholder="Parks Open" type="text"/>
-                            <input name="totalParksInput" onChange={(e) => this.handleChange(e)} placeholder="Total Parts" type="text"/>
-                            <button onClick={this.toggleEdit}>Cancel</button>
+                            <input name="totalParksInput" onChange={(e) => this.handleChange(e)} placeholder="Total Parks" type="text"/>
+                            <button onClick={this.toggleAdd}>Cancel</button>
                             <button onClick={this.addResort}>Submit</button>
                         </div>
                 }
                 </div>
-            </div>
         )
     }
 }

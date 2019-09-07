@@ -14,6 +14,7 @@ export default class Display extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        this.handleEdit = this.handleEdit.bind(this)
     }
 
     componentDidMount() {
@@ -21,12 +22,18 @@ export default class Display extends Component {
             this.setState({resorts: res.data})
         }).catch(err => {
             // Do something more
-            console.log(err)
+            console.log('error fetching resorts')
         })
     }
 
     handleSubmit(body) {
         axios.post('/api/resorts', body).then(res => {
+            this.setState({resorts: res.data})
+        })
+    }
+
+    handleEdit(id, body) {
+        axios.put(`/api/resorts/${id}`, body).then(res => {
             this.setState({resorts: res.data})
         })
     }
@@ -44,6 +51,8 @@ export default class Display extends Component {
                         data={el}
                         id={el.id}
                         handleDelete={this.handleDelete}
+                        handleEdit={this.handleEdit}
+                        zip={el.zip}
                     />
         })
         return(

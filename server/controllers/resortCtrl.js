@@ -31,6 +31,25 @@ module.exports = {
         res.status(200).send(resorts)
     },
 
+    editResort: (req, res, next) => {
+        const {id} = req.params
+        const {newZip} = req.body
+        const {newOpeningDate} = req.body
+        const {newLiftsOpen} = req.body
+        const {newTrailsOpen} = req.body
+        const {newParksOpen} = req.body
+        const index = resorts.findIndex(el => +el.id === +id)
+        if (index === -1) {
+            res.status(404).send('ID not found.')
+        }
+        resorts[index].zip = newZip
+        resorts[index].openingDate = newOpeningDate
+        resorts[index].liftsOpen = newLiftsOpen
+        resorts[index].trailsOpen = newTrailsOpen
+        resorts[index].parksOpen = newParksOpen
+        res.status(200).send(resorts)
+    },
+
     deleteResort: (req, res, next) => {
         const {id} = req.params
         const index = resorts.findIndex(el => +el.id === +id)
@@ -39,9 +58,6 @@ module.exports = {
         }
         resorts.splice(index, 1)
         res.status(200).send(resorts)
-    },
-
-    editResort: (req, res, next) => {
-        
     }
+
 }
