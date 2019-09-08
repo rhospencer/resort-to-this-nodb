@@ -9,11 +9,9 @@ export default class Weather extends Component {
 
         this.state = {
             weather: [],
-            // day1: [],
-            // day2: [],
-            // day3: [],
-            // day4: [],
-            // day5: []
+            day3: '',
+            day4: '',
+            day5: ''
         }
     }
 
@@ -29,6 +27,26 @@ export default class Weather extends Component {
         console.log(this.state.weather[0])
         // this.setState({day1: this.state.weather[0]})
         // console.log(this.state.day1)
+        this.getDays()
+    }
+    getDays() {
+        let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']
+        let todaysDate = new Date()
+        let dayOfWeek = todaysDate.getDay()
+        let day3 = dayOfWeek + 2
+        let day4 = dayOfWeek + 3
+        let day5 = dayOfWeek + 4
+        let dayOfWeek3 = daysOfTheWeek[+day3]
+        let dayOfWeek4 = daysOfTheWeek[+day4]
+        let dayOfWeek5 = daysOfTheWeek[+day5]
+        console.log(dayOfWeek3)
+        console.log(dayOfWeek4)
+        console.log(dayOfWeek5)
+        this.setState({day3: dayOfWeek3, day4: dayOfWeek4, day5: dayOfWeek5})
+        console.log(this.state.day3)
+        // console.log(this.state.day4)
+        // console.log(this.state.day5)
+
     }
 
     render() {
@@ -51,7 +69,7 @@ export default class Weather extends Component {
                     <h3 className="temp"></h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">The Next Day</h2>
+                    <h2 className="day">{this.state.day3}</h2>
                     <h3 className="temp"></h3>
                     <div className="icon">
                         <img src="" alt=""/>
@@ -59,7 +77,7 @@ export default class Weather extends Component {
                     <h3 className="temp"></h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">The Next Day</h2>
+                    <h2 className="day">{this.state.day4}</h2>
                     <h3 className="temp"></h3>
                     <div className="icon">
                         <img src="" alt=""/>
@@ -67,7 +85,7 @@ export default class Weather extends Component {
                     <h3 className="temp"></h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">The Next Day</h2>
+                    <h2 className="day">{this.state.day5}</h2>
                     <h3 className="temp"></h3>
                     <div className="icon">
                         <img src="" alt=""/>
