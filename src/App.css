@@ -125,6 +125,11 @@ font-size: 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+}
+.opening-date:before {
+  content: "Opening Date: ";
+  font-weight: 900;
 }
 .resort-info-edit-holder {
   height: 20vh;
@@ -171,17 +176,57 @@ font-size: 2.5rem;
   height: 40px;
   width: auto;
 }
-.add-holder {
+.add-form-holder {
   height: 50vh;
-  width: 80vw;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-bottom: 50px;
+}
+.add-form-box {
+  height: 50vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: white;
+  border-radius: 10px;
+
+}
+.add-text-and-input-holder {
+  height: 50vh;
+  width: 40vw;
+  display: flex;
+}
+.add-form-text {
+  height: 90%;
+  width: 50%;
   text-align: left;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-content: flex-start;
   border-radius: 10px;
-  margin-bottom: 50px;
+  
+}
+.add-form-input {
+  height: 90%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+}
+.add-button-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  cursor: pointer;
+  padding-bottom: 20px;
 }
 .weather-holder {
   height: 30vh;
@@ -246,3 +291,16 @@ footer {
 .icon-credit a{
   color: black;
 }
+input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+input:hover {
+  border-color: #54D2E5;
+}
+input:focus {
+  outline: none;
+  border-color: #424249;
+  box-shadow: 0 0 10px 4px #54D2E5;
+  border-radius: 2px;
+} 
