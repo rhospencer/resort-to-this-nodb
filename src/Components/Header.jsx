@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import '../App.css'
 import mountainLogo from '../assets/mountainLogo.png'
 

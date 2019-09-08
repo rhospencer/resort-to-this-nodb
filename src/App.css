@@ -13,8 +13,8 @@
   font-size: .8rem;
 }
 header {
-  height: 20vh;
-  width: 100vw;
+  min-height: 20vh;
+  min-width: 100vw;
   background: #424249;
   display: flex;
   justify-content: flex-start;
@@ -24,26 +24,57 @@ header {
   color: white;
 }
 .img-box{
-  height: 100%;
-  width: 25%;
+  min-height: 100%;
+  min-width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .img-box img {
-  height: 100px;
-  width: 120px;
+  min-height: 100px;
+  min-width: 120px;
 }
 .title-box {
-  height: 100%;
-  width: 50%;
+  min-height: 100%;
+  min-width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.count {
+  height: 8vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+}
+.count-box {
+  min-height: 100%;
+  min-width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #424249;
+}
+.music-box {
+  min-height: 100%;
+  min-width: 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+}
+.music-box img {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+
+}
 .display {
   /* height: 400vh; */
-  width: 100vw;
+  min-width: 100vw;
   background: #54D2E5;
   display: flex;
   flex-direction: column;
@@ -53,16 +84,16 @@ header {
   box-sizing: content-box;
 }
 .resort-holder {
-  height: 50vh;
-  width: 100vw;
+  min-height: 50vh;
+  min-width: 100vw;
   margin-bottom: 25px;
   margin-top: 20px;
   display: flex;
 
 }
 .resort-title-holder {
-  height: 8vh;
-  width: 100%;
+  min-height: 8vh;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -74,13 +105,13 @@ header {
   font-size: 1rem;
 }
 .resort-edit-title-holder {
-  height: 10vh;
-  width: 100%;
+  min-height: 10vh;
+  min-width: 100%;
   display: flex;
 }
 .resort-edit-name-holder {
-  height: 10vh;
-  width: 60%;
+  min-height: 10vh;
+  min-width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,8 +127,8 @@ font-size: 2.5rem;
   align-items: center;
 }
 .resort {
-  height: 50vh;
-  width: 80vw;
+  min-height: 50vh;
+  min-width: 80vw;
   background: white;
   text-align: left;
   padding: 20px 20px 0 20px;
@@ -108,8 +139,8 @@ font-size: 2.5rem;
 
 }
 .resort-edit {
-  height: 50vh;
-  width: 80vw;
+  min-height: 50vh;
+  min-width: 80vw;
   display: flex;
   flex-direction: column;
   background: white;
@@ -132,23 +163,23 @@ font-size: 2.5rem;
   font-weight: 900;
 }
 .resort-info-edit-holder {
-  height: 20vh;
-  width: 100%;
+  min-height: 20vh;
+  min-width: 100%;
   display: flex;
   justify-content: space-around;
   padding-bottom: 10px;
 }
 .info-edit {
-  height: 100%;
-  width: 15vw;
+  min-height: 100%;
+  min-width: 15vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .edit-holder {
-  height: 100%;
-  width: 17vw;
+  min-height: 100%;
+  min-width: 17vw;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -181,13 +212,14 @@ font-size: 2.5rem;
   width: 80%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;;
   margin: 0;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .add-form-box {
-  height: 50vh;
-  width: 40vw;
+  min-height: 50vh;
+  min-width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,15 +228,15 @@ font-size: 2.5rem;
 
 }
 .add-text-and-input-holder {
-  height: 50vh;
-  width: 40vw;
+  min-height: 50vh;
+  min-width: 40vw;
   display: flex;
 }
 .add-form-text {
-  height: 90%;
-  width: 50%;
+  min-height: 90%;
+  min-width: 50%;
   text-align: left;
-  padding: 20px 20px 0 120px;
+  padding: 20px 20px 0 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -213,32 +245,33 @@ font-size: 2.5rem;
   
 }
 .add-form-input {
-  height: 90%;
-  width: 30%;
+  min-height: 90%;
+  min-width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 20px 0 20px;
 }
 .add-button-holder {
-  width: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   cursor: pointer;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 .weather-holder {
-  height: 30vh;
-  width: 100%;
+  min-height: 30vh;
+  min-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 .weather-day-holder {
-  width: 15vw;
-  height: 15vw;
+  min-width: 15vw;
+  min-height: 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,13 +279,13 @@ font-size: 2.5rem;
   background: #424249;
 }
 .weather-day-holder img {
-  height: 80px;
-  width: 80px;
+  max-height: 50%;
+  max-width: 50%;
 
 }
 .day {
-  height: 15%;
-  width: 90%;
+  min-height: 15%;
+  min-width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,8 +296,8 @@ font-size: 2.5rem;
 
 }
 .temp {
-  height: 15%;
-  width: 100%;
+  min-height: 15%;
+  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -272,16 +305,16 @@ font-size: 2.5rem;
   font-size: 1.2rem;
 }
 .icon {
-  height: 70%;
-  width: 100%;
+  min-height: 70%;
+  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 footer {
-  height: 18vh;
-  width: 100vw;
+  min-height: 18vh;
+  min-width: 100vw;
   background: #424249;
   display: flex;
   flex-direction: column;

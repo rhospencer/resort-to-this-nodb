@@ -3,6 +3,7 @@ import '../App.css'
 import axios from 'axios'
 import Resorts from './Resorts'
 import AddForm from './AddForm'
+import Count from './Count'
 
 
 export default class Display extends Component {
@@ -21,7 +22,6 @@ export default class Display extends Component {
         axios.get('/api/resorts').then(res => {
             this.setState({resorts: res.data})
         }).catch(err => {
-            // Do something more
             console.log('error fetching resorts')
         })
     }
@@ -57,6 +57,7 @@ export default class Display extends Component {
         })
         return(
             <div className="display">
+                <Count length={this.state.resorts.length}/>
                 {list}
                 <AddForm 
                     handleSubmit={this.handleSubmit} 

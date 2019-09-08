@@ -16,15 +16,14 @@ export default class Weather extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.zip)
+        console.log(this.props.zip)
         axios.get(`/api/weather/?zip=${this.props.zip}`).then(result => {
             this.setState({weather: result.data})
-            // console.log(this.state.weather)
+            console.log(this.state.weather)
         }).catch(err => {
-            // Do something more
             console.log('error fetching weather')
         })
-        console.log(this.state.weather[0])
+        console.log(this.state.weather)
         // this.setState({day1: this.state.weather[0]})
         // console.log(this.state.day1)
         this.getDays()
@@ -39,14 +38,7 @@ export default class Weather extends Component {
         let dayOfWeek3 = daysOfTheWeek[+day3]
         let dayOfWeek4 = daysOfTheWeek[+day4]
         let dayOfWeek5 = daysOfTheWeek[+day5]
-        console.log(dayOfWeek3)
-        console.log(dayOfWeek4)
-        console.log(dayOfWeek5)
         this.setState({day3: dayOfWeek3, day4: dayOfWeek4, day5: dayOfWeek5})
-        console.log(this.state.day3)
-        // console.log(this.state.day4)
-        // console.log(this.state.day5)
-
     }
 
     render() {
@@ -62,35 +54,35 @@ export default class Weather extends Component {
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">Tomorrow</h2>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src="" alt=""/>
+                        <img src={clearSkyDay} alt="Weather Icon"/>
                     </div>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.day3}</h2>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src="" alt=""/>
+                        <img src={clearSkyDay} alt="Weather Icon"/> 
                     </div>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.day4}</h2>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src="" alt=""/>
+                        <img src={clearSkyDay} alt="Weather Icon"/>
                     </div>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.day5}</h2>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src="" alt=""/>
+                        <img src={clearSkyDay} alt="Weather Icon"/>
                     </div>
-                    <h3 className="temp"></h3>
+                    <h3 className="temp">75°</h3>
                 </div>
             </div>
         )
