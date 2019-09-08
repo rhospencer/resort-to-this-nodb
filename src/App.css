@@ -279,8 +279,8 @@ font-size: 2.5rem;
   background: #424249;
 }
 .weather-day-holder img {
-  max-height: 50%;
-  max-width: 50%;
+  max-height: 100%;
+  max-width: 100%;
 
 }
 .day {
@@ -313,13 +313,14 @@ font-size: 2.5rem;
 
 }
 footer {
-  min-height: 18vh;
+  min-height: 7vh;
   min-width: 100vw;
   background: #424249;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: 10px;
+  padding-right: 50px;
 }
 .icon-credit a{
   color: black;

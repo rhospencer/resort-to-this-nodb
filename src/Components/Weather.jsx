@@ -1,7 +1,16 @@
 import React, {Component} from 'react'
 import '../App.css'
 import axios from 'axios'
-import clearSkyDay from '../assets/weatherIcons/clearSkyDay.png'
+import clearSky from '../assets/weatherIcons/clearSky.png'
+import fewClouds from '../assets/weatherIcons/fewClouds.png'
+import scatteredClouds from '../assets/weatherIcons/scatteredClouds.png'
+import brokenClouds from '../assets/weatherIcons/brokenClouds.png'
+import showerRain from '../assets/weatherIcons/showerRain.png'
+import rain from '../assets/weatherIcons/rain.png'
+import thunderStorm from '../assets/weatherIcons/thunderStorm.png'
+import snow from '../assets/weatherIcons/snow.png'
+import mist from '../assets/weatherIcons/mist.png'
+import unknown from '../assets/weatherIcons/unknown.png'
 
 export default class Weather extends Component {
     constructor() {
@@ -9,36 +18,33 @@ export default class Weather extends Component {
 
         this.state = {
             weather: [],
-            day3: '',
-            day4: '',
-            day5: ''
+            dayOf3: '',
+            dayOf4: '',
+            dayOf5: ''
         }
     }
 
     componentDidMount() {
         console.log(this.props.zip)
-        axios.get(`/api/weather/?zip=${this.props.zip}`).then(result => {
-            this.setState({weather: result.data})
+        axios.get(`/api/weather/?zip=${this.props.zip}`).then(res => {
+            this.setState({weather: res.data})
             console.log(this.state.weather)
         }).catch(err => {
             console.log('error fetching weather')
         })
-        console.log(this.state.weather)
-        // this.setState({day1: this.state.weather[0]})
-        // console.log(this.state.day1)
         this.getDays()
     }
     getDays() {
         let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']
         let todaysDate = new Date()
         let dayOfWeek = todaysDate.getDay()
-        let day3 = dayOfWeek + 2
-        let day4 = dayOfWeek + 3
-        let day5 = dayOfWeek + 4
-        let dayOfWeek3 = daysOfTheWeek[+day3]
-        let dayOfWeek4 = daysOfTheWeek[+day4]
-        let dayOfWeek5 = daysOfTheWeek[+day5]
-        this.setState({day3: dayOfWeek3, day4: dayOfWeek4, day5: dayOfWeek5})
+        let dayOf3 = dayOfWeek + 2
+        let dayOf4 = dayOfWeek + 3
+        let dayOf5 = dayOfWeek + 4
+        let dayOfWeek3 = daysOfTheWeek[+dayOf3]
+        let dayOfWeek4 = daysOfTheWeek[+dayOf4]
+        let dayOfWeek5 = daysOfTheWeek[+dayOf5]
+        this.setState({dayOf3: dayOfWeek3, dayOf4: dayOfWeek4, dayOf5: dayOfWeek5})
     }
 
     render() {
@@ -48,7 +54,7 @@ export default class Weather extends Component {
                     <h2 className="day">Today</h2>
                     <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src={clearSkyDay} alt="Weather Icon"/>
+                        <img src={clearSky} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">75°</h3>
                 </div>
@@ -56,31 +62,31 @@ export default class Weather extends Component {
                     <h2 className="day">Tomorrow</h2>
                     <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src={clearSkyDay} alt="Weather Icon"/>
+                        <img src={rain} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">{this.state.day3}</h2>
+                    <h2 className="day">{this.state.dayOf3}</h2>
                     <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src={clearSkyDay} alt="Weather Icon"/> 
+                        <img src={snow} alt="Weather Icon"/> 
                     </div>
                     <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">{this.state.day4}</h2>
+                    <h2 className="day">{this.state.dayOf4}</h2>
                     <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src={clearSkyDay} alt="Weather Icon"/>
+                        <img src={thunderStorm} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">75°</h3>
                 </div>
                 <div className="weather-day-holder">
-                    <h2 className="day">{this.state.day5}</h2>
+                    <h2 className="day">{this.state.dayOf5}</h2>
                     <h3 className="temp">100°</h3>
                     <div className="icon">
-                        <img src={clearSkyDay} alt="Weather Icon"/>
+                        <img src={brokenClouds} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">75°</h3>
                 </div>
