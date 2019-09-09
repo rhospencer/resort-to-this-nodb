@@ -109,17 +109,13 @@ export default class App extends Component {
                         </div>
                     </div>
                     <div className="edit-button-holder">
-                        {/* <button onClick={() => this.toggleEdit()}>Cancel</button> */}
                         <img src={cancelImg} onClick={() => this.toggleEdit()} alt="Cancel Button Icon"/>
-                        {/* <button onClick={this.editResort}>Submit</button> */}
                         <img src={submitImg}  onClick={this.editResort} alt="Submit Button Icon"/>
                     </div>
                 </div>
             }
                 <div className="edit-holder">
-                    {/* <button onClick={() => this.toggleEdit()}>Edit</button> */}
                     <img src={editImg} onClick={() => this.toggleEdit()} alt="Edit Button Icon"/>
-                    {/* <button onClick={() => this.props.handleDelete(this.props.id)}>Delete</button> */}
                     <img src={deleteImg} onClick={() => this.props.handleDelete(this.props.id)} alt="Delete Button Icon"/>
                 </div>
             </div>

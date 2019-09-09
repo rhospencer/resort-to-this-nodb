@@ -19,13 +19,4 @@ app.delete('/api/resorts/:id', resortCtrl.deleteResort)
 
 app.get(`/api/weather`, weatherCtrl.getWeather)
 
-
-
-
-
-
-
-
-
-
 app.listen(SERVER_PORT, () => console.log(`Listening on port ${SERVER_PORT}`))

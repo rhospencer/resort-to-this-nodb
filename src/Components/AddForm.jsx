@@ -94,15 +94,12 @@ export default class App extends Component {
 
                                 </div>
                                 <div className="add-button-holder">
-                                    {/* <button onClick={() => this.toggleEdit()}>Cancel</button> */}
                                     <img src={cancelImg} onClick={this.toggleAdd} alt="Cancel Button Icon"/>
-                                    {/* <button onClick={this.editResort}>Submit</button> */}
                                     <img src={submitImg}  onClick={this.addResort} alt="Submit Button Icon"/>
                                 </div>
 
                             </div>
-                                {/* <button onClick={this.toggleAdd}>Cancel</button>
-                                <button onClick={this.addResort}>Submit</button> */}
+
                         </div>
                 }
                 </div>

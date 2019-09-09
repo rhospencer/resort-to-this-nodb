@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import '../App.css'
 import axios from 'axios'
-// import WeatherIcon from './WeatherIcon.jsx'
 import Clear from '../assets/weatherIcons/clear.png'
 import Clouds from '../assets/weatherIcons/clouds.png'
 import Rain from '../assets/weatherIcons/rain.png'
@@ -44,20 +43,17 @@ export default class Weather extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.zip)
         axios.get(`/api/weather/?zip=${this.props.zip}`).then(res => {
             this.setState({weather: res.data})
             this.splitDays()
             this.findMaxTemp()
             this.findMinTemp()
             this.findWeatherIcon()
-            // console.log(this.sate.day1MaxTemp)
 
         }).catch(err => {
             console.log('error fetching weather')
         })
         this.getDays()
-        // this.splitDays()
     }
     getDays() {
         let daysOfTheWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']
@@ -287,8 +283,6 @@ export default class Weather extends Component {
     }
 
     render() {
-        // let weatherIcon = unknown
-        // if ()
         return(
             <div className="weather-holder">
                 <div className="weather-day-holder">
