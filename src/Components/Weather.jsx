@@ -38,7 +38,12 @@ export default class Weather extends Component {
             day2Img: Unknown,
             day3Img: Unknown,
             day4Img: Unknown,
-            day5Img: Unknown
+            day5Img: Unknown,
+            day1Description: '',
+            day2Description: '',
+            day3Description: '',
+            day4Description: '',
+            day5Description: '',
         }
     }
 
@@ -49,6 +54,7 @@ export default class Weather extends Component {
             this.findMaxTemp()
             this.findMinTemp()
             this.findWeatherIcon()
+            this.setDescription()
 
         }).catch(err => {
             console.log('error fetching weather')
@@ -282,6 +288,18 @@ export default class Weather extends Component {
         this.setState({day1Img: day1WeatherIcon, day2Img: day2WeatherIcon, day3Img: day3WeatherIcon, day4Img: day4WeatherIcon, day5Img: day5WeatherIcon})
     }
 
+    setDescription() {
+        this.setState({
+            day1Description: this.state.daySplit1[0].weather[0].description,
+            day2Description: this.state.daySplit2[2].weather[0].description,
+            day3Description: this.state.daySplit3[2].weather[0].description,
+            day4Description: this.state.daySplit4[2].weather[0].description,
+            day5Description: this.state.daySplit5[2].weather[0].description,
+
+        })
+        
+    }
+
     render() {
         return(
             <div className="weather-holder">
@@ -292,6 +310,7 @@ export default class Weather extends Component {
                         <img src={this.state.day1Img} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">{this.state.day1MinTemp}°</h3>
+                    <h2 className="description">{this.state.day1Description}</h2>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">Tomorrow</h2>
@@ -300,6 +319,7 @@ export default class Weather extends Component {
                         <img src={this.state.day2Img} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">{this.state.day2MinTemp}°</h3>
+                    <h2 className="description">{this.state.day2Description}</h2>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.dayOf3}</h2>
@@ -308,6 +328,7 @@ export default class Weather extends Component {
                         <img src={this.state.day3Img} alt="Weather Icon"/> 
                     </div>
                     <h3 className="temp">{this.state.day3MinTemp}°</h3>
+                    <h2 className="description">{this.state.day3Description}</h2>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.dayOf4}</h2>
@@ -316,6 +337,7 @@ export default class Weather extends Component {
                         <img src={this.state.day4Img} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">{this.state.day4MinTemp}°</h3>
+                    <h2 className="description">{this.state.day4Description}</h2>
                 </div>
                 <div className="weather-day-holder">
                     <h2 className="day">{this.state.dayOf5}</h2>
@@ -324,6 +346,7 @@ export default class Weather extends Component {
                         <img src={this.state.day5Img} alt="Weather Icon"/>
                     </div>
                     <h3 className="temp">{this.state.day5MinTemp}°</h3>
+                    <h2 className="description">{this.state.day5Description}</h2>
                 </div>
             </div>
         )
