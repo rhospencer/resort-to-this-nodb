@@ -32,7 +32,7 @@ export default class Count extends Component {
         return(
             <div className="count">
                     <div className="music-box">
-                        <img onClick={this.state.playing ? this.pauseSong : this.playSong} src={play} alt="Music Off Icon"/>
+                        <img onClick={this.state.playing ? this.pauseSong : this.playSong} src={play} alt="Play/Pause Button"/>
                     </div>
                 <div className="count-box">
                     <h6>Resorts Being Tracked: {this.props.length}</h6>

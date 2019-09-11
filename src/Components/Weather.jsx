@@ -9,6 +9,7 @@ import Thunderstorm from '../assets/weatherIcons/thunderstorm.png'
 import Snow from '../assets/weatherIcons/snow.png'
 import Fog from '../assets/weatherIcons/fog.png'
 import Unknown from '../assets/weatherIcons/unknown.png'
+import Jon_Cloud from '../assets/weatherIcons/jon_cloud.png'
 
 export default class Weather extends Component {
     constructor() {
@@ -198,7 +199,7 @@ export default class Weather extends Component {
                 day2WeatherIcon = Clear
                 break
             case 'Clouds':
-                day2WeatherIcon = Clouds
+                day2WeatherIcon = Jon_Cloud
                 break
             default: 
                 day2WeatherIcon = Unknown
